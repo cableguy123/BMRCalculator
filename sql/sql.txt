@@ -1,0 +1,14 @@
+DROP TABLE users;
+
+CREATE TABLE users (
+     users_gender	varchar2(10)	NOT NULL
+    ,users_age		number(3)	NOT NULL
+    ,users_height	number(3)	NOT NULL
+    ,users_weight	number(3)	NOT NULL
+);
+
+
+INSERT INTO users
+VALUES(1, '東中野の人気ラーメン屋', '4', sysdate);
+
+COMMIT;
