@@ -23,7 +23,7 @@ public class LoginCheckFilter implements Filter {
     HttpServletRequest request = (HttpServletRequest) req;
     HttpServletResponse response = (HttpServletResponse) res;
     HttpSession session = request.getSession();
-    String token = (String) session.getAttribute("token");
+    String token = (String) session.getAttribute("/login.jsp");
 
     String requestURI = (String) session.getAttribute("/login.jsp");
     if (requestURI.endsWith("/data_input.jsp")) {
