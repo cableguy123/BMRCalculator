@@ -15,7 +15,7 @@
         <img class="logo" src="image/logo/bmr-calculator-high-resolution-logo-color-on-transparent-background.png"
             alt="Website logo">
         <h1>Log In</h1>
-        <form method="post" action="">
+        <form method="post" action="authenticate">
             <div class="block">
                 <lable class="text">Username</lable><input class="input" type="text" name="user" required>
             </div>
