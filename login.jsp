@@ -16,8 +16,12 @@
             alt="Website logo">
         <h1>Log In</h1>
         <form method="post" action="">
-            Username<input class="input" type="text" name="user" required><br>
-            Password<input class="input" type="password" name="pass" required><br>
+            <div class="block">
+                <lable class="text">Username</lable><input class="input" type="text" name="user" required>
+            </div>
+            <div class="block">
+                <lable class="text">Password</lable><input class="input" type="password" name="pass" required>
+            </div>
             <input class="button" type="submit" value="Log In">
         </form>
     </body>
