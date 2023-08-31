@@ -10,14 +10,14 @@
         <title>BMR Calculator</title>
         <link rel="icon" type="image/png" href="image/logo/bmr-calculator-website-favicon-color.png">
         <header>
-            <a href="main.html"><img
+            <a class="logo" href="main.html"><img class="logo"
                     src="image/logo/bmr-calculator-high-resolution-logo-color-on-transparent-background.png"
                     alt="Website logo"></a>
             <nav>
                 <ul>
-                    <li><a href="">TOP</a></li>
-                    <li><a href="">ACCOUNT</a></li>
-                    <li><a href="">ABOUT AS</a></li>
+                    <li><a class="link" href="">TOP</a></li>
+                    <li><a class="link" href="">ACCOUNT</a></li>
+                    <li><a class="link" href="">ABOUT AS</a></li>
                 </ul>
             </nav>
         </header>
