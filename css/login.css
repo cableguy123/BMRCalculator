@@ -1,0 +1,55 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+/*LOGO*/
+img.logo {
+    max-width: 50%;
+}
+
+/*BODY*/
+body {
+    /*Horizontally Center*/
+    text-align: center;
+    /*Vertically  Center*/
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+body h1 {
+    font-family: 'Inter', sans-serif;
+    margin: 5px;
+}
+
+body form {
+    font-family: 'Inter', sans-serif;
+}
+
+body input.input {
+    margin: 5px 5px 5px 5px;
+}
+
+body input.button {
+    margin: 5px;
+    background-color: #ff4136;
+    border: 0px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+body input.button:hover {
+    background-color: #e4372e;
+}
