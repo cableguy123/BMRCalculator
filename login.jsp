@@ -15,9 +15,9 @@
         <img class="logo" src="image/logo/bmr-calculator-high-resolution-logo-color-on-transparent-background.png"
             alt="Website logo">
         <h1>Log In</h1>
-        <form method="post" action="">
-            Username<input class="input" type="text" name="user" required><br>
-            Password<input class="input" type="password" name="pass" required><br>
+        <form action="authenticate" method="post">
+            Username<input class="input" type="text" name="user" required autocomplete="off"><br>
+            Password<input class="input" type="password" name="pass" required autocomplete="new-password"><br>
             <input class="button" type="submit" value="Log In">
         </form>
     </body>
