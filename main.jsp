@@ -42,7 +42,7 @@
             times/week
             <input type="radio" id="html" name="activity_level" value="5">Extra Active: Very intense exercise daily, or
             physical job<br>
-            <input type="submit" value="Calculate">
+            <input class="button" type="submit" value="Calculate">
         </form>
     </body>
 
