@@ -9,17 +9,24 @@ body {
 }
 
 /*HEADER*/
-/*LOGO*/
+/*Logo*/
 header {
     background-color: #c7c7c7;
     padding: 20px 20px;
     display: inline-flex;
 }
 
+/*Logo Vertically Center*/
+header img {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+/*NAV*/
 header a.link {
     text-decoration: none;
     color: black;
-    font-size: 20px;
 }
 
 header ul {
@@ -35,7 +42,26 @@ header ul li {
 }
 
 /*BODY*/
+/*Left-Right-half*/
+article {
+    position: relative;
+    top: 50%;
+    text-align: center;
+    transform: translate(0, -50%);
+    padding: 1rem;
+}
 
+.container {
+    display: grid;
+}
+
+div.left-half {
+    grid-column: 1;
+}
+
+div.right-half {
+    grid-column: 2;
+}
 
 /*FORM*/
 
