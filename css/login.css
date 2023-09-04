@@ -17,10 +17,10 @@ img.logo {
 body {
     /*Horizontally Center*/
     text-align: center;
-    /*Vertically  Center*/
+    /*Vertically Center*/
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(0, -50%);
 }
 
 body h1 {
