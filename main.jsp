@@ -28,6 +28,36 @@
                 </nav>
             </header>
 
+<<<<<<< HEAD
+            <div class="right-half">
+                </article>
+                <form method="post" action="">
+                    <h3>Activity Level</h3><input type="radio" id="html" name="activity_level" value="1">Sedentary:
+                    Little
+                    or no
+                    exercise
+                    <input type="radio" id="css" name="activity_level" value="2">Light: Exercise 1-2 times/week
+                    <input type="radio" id="html" name="activity_level" value="3">Moderate: Exercise 3-5 times/week
+                    <input type="radio" id="html" name="activity_level" value="4">Active: Daily exercise or intense
+                    exercise
+                    6-7
+                    times/week
+                    <input type="radio" id="html" name="activity_level" value="5">Extra Active: Very intense exercise
+                    daily,
+                    or
+                    physical job<br>
+                    <input class="button" type="submit" value="Calculate">
+                </form>
+                </article>
+            </div>
+        </section>
+
+          <!-- Data Display -->
+    <!-- <p>gender: <%= request.getAttribute("gender") %></p>
+    <p>age: <%= request.getAttribute("age") %></p>
+    <p>height: <%= request.getAttribute("height") %> cm</p>
+    <p>weight</p>: <%= request.getAttribute("weight") %> kg</p> -->
+=======
             <section class="container">
                 <div class="left-half">
                     <article>
@@ -89,6 +119,7 @@
                 </div>
             </section>
         </div>
+>>>>>>> 47988126e6a14f5607ea32c79e98c93a1e637cc2
     </body>
 
     </html>
