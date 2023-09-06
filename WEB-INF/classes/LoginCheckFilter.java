@@ -13,6 +13,21 @@ import javax.servlet.http.HttpSession;
 
 public class LoginCheckFilter implements Filter {
 
+<<<<<<< HEAD
+  @Override
+  public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
+    // TODO Auto-generated method stub
+    HttpServletRequest request = (HttpServletRequest) req;
+    HttpServletResponse response = (HttpServletResponse) res;
+    HttpSession session = request.getSession();
+    String token = (String) session.getAttribute("/login.jsp");
+    String requestURI = (String) session.getAttribute("/login.jsp");
+    if (requestURI.endsWith("/data_input.jsp")) {
+      if (token == null || !token.equals("OK")) {
+          response.sendRedirect(request.getContextPath() + "/login.jsp");
+          return;
+      }
+=======
     public void init(FilterConfig config) throws ServletException {}
 
     public void destroy() {}
@@ -29,5 +44,6 @@ public class LoginCheckFilter implements Filter {
         } else {
             chain.doFilter(req, res);
         }
+>>>>>>> 91dd9cea597945736a107075e1f75a13594b71e1
     }
 }
