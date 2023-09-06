@@ -12,17 +12,17 @@
     </head>
 
     <body>
-        <img src="image/logo/bmr-calculator-high-resolution-logo-color-on-transparent-background.png"
+        <img class="logo" src="image/logo/bmr-calculator-high-resolution-logo-color-on-transparent-background.png"
             alt="Website logo">
         <h1>Personal Data Input</h1>
-        <form method="post" action="">
-            Gender<input type="radio" name="gender" value="M">Male
-            <input type="radio" name="gender" value="F">Female<br>
-            Age<input type="text" name="age" required><br>
-            Height<input type="text" name="height" required><br>
-            Weight<input type="text" name="weight" required><br>
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
+        <form method="post" action="dataInput">
+            Gender<input class="radio" type="radio" name="gender" value="M">Male
+            <input class="radio" type="radio" name="gender" value="F">Female<br>
+            Age<input class=" input" type="text" name="age" required><br>
+            Height<input class=" input" type="text" name="height" required><br>
+            Weight<input class=" input" type="text" name="weight" required><br>
+            <input class="button" type="submit" value="Submit">
+            <input class="button" type="reset" value="Reset">
         </form>
     </body>
 

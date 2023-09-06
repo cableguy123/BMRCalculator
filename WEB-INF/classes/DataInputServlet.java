@@ -23,7 +23,7 @@ public class DataInputServlet {
     // <input type="radio" name="gender" value="F">Female<br>
     RequestDispatcher dispatcher = req.getRequestDispatcher("/main.jsp");
     dispatcher.forward(req, res);
-
+    
 
      
 
