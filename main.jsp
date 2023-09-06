@@ -71,6 +71,12 @@
                 </article>
             </div>
         </section>
+
+          <!-- Data Display -->
+    <!-- <p>gender: <%= request.getAttribute("gender") %></p>
+    <p>age: <%= request.getAttribute("age") %></p>
+    <p>height: <%= request.getAttribute("height") %> cm</p>
+    <p>weight</p>: <%= request.getAttribute("weight") %> kg</p> -->
     </body>
 
     </html>
