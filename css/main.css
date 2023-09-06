@@ -14,6 +14,10 @@ header {
     background-color: #c7c7c7;
     padding: 20px 20px;
     display: inline-flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%
 }
 
 /*Logo Vertically Center*/
@@ -44,23 +48,23 @@ header ul li {
 /*BODY*/
 /*Left-Right-half*/
 article {
-    position: relative;
+    position: sticky;
     top: 50%;
-    text-align: center;
     transform: translate(0, -50%);
     padding: 1rem;
 }
 
 .container {
-    display: grid;
+    display: flex;
+    height: 100vh;
 }
 
 div.left-half {
-    grid-column: 1;
+    flex: 1;
 }
 
 div.right-half {
-    grid-column: 2;
+    flex: 1;
 }
 
 /*FORM*/

@@ -1,14 +1,19 @@
 DROP TABLE users;
 
 CREATE TABLE users (
-     users_gender  varchar2(10) NOT NULL
-    ,users_age     number(3)    NOT NULL
-    ,users_height  number(3)    NOT NULL
-    ,users_weight  number(3)    NOT NULL
+    users_gender  varchar2(10)  NOT NULL,
+    users_age     number(3)    NOT NULL,
+    users_height  number(3)    NOT NULL,
+    users_weight  number(3)    NOT NULL
 );
 
+CREATE TABLE meals (
+    meals_date      varchar2(10)  NOT NULL,
+    meals_Calories  number(10)  NOT NULL
+)
 
-INSERT INTO users
-VALUES(1, '東中野の人気ラーメン屋', '4', sysdate);
+
+INSERT INTO meals
+VALUES('2023/09/06', 1500);
 
 COMMIT;
