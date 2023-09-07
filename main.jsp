@@ -21,7 +21,7 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a class="link" href="">TOP</a></li>
+                        <li><a class="link" href="main">TOP</a></li>
                         <li><a class="link" href="">ACCOUNT</a></li>
                         <li><a class="link" href="">ABOUT AS</a></li>
                     </ul>
@@ -90,22 +90,21 @@
                         <form method="post" action="">
                             <div>
                                 <h3>Activity Level</h3>
-                                <input type="radio" id="html" name="activity_level" value="1">Sedentary: Little or no
-                                exercise<br>
-                                <input type="radio" id="css" name="activity_level" value="2">Light: Exercise 1-2
-                                times/week<br>
-                                <input type="radio" id="html" name="activity_level" value="3">Moderate: Exercise 3-5
-                                times/week<br>
-                                <input type="radio" id="html" name="activity_level" value="4">Active: Daily exercise or
-                                intense
-                                exercise
-                                6-7
-                                times/week<br>
-                                <input type="radio" id="html" name="activity_level" value="5">Extra Active: Very intense
-                                exercise
-                                daily,
-                                or
-                                physical job<br>
+                                <input id="1" type="radio" name="activity_level" value="1">
+                                <label for="1">Sedentary: Little or no exercise</label>
+                                <br>
+                                <input id="2" type="radio" id="css" name="activity_level" value="2">
+                                <label for="2">Light: Exercise 1-2 times/week</label>
+                                <br>
+                                <input id="3" type="radio" id="html" name="activity_level" value="3">
+                                <label for="3">Moderate: Exercise 3-5 times/week</label>
+                                <br>
+                                <input id="4" type="radio" id="html" name="activity_level" value="4">
+                                <label for="4">Active: Daily exercise or intense exercise 6-7 times/week</label>
+                                <br>
+                                <input id="5" type="radio" id="html" name="activity_level" value="5">
+                                <label for="5">Extra Active: Very intense xercise daily, or physical job</label>
+                                <br>
                             </div>
 
                             <div>

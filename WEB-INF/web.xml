@@ -29,6 +29,17 @@
 		<url-pattern>/main</url-pattern>
 	</servlet-mapping>
 
+
+	<servlet>
+		<servlet-name>result</servlet-name>
+		<jsp-file>/result.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>result</servlet-name>
+		<url-pattern>/result</url-pattern>
+	</servlet-mapping>
+
+
 	<filter>
 		<filter-name>LoginCheckFilter</filter-name>
 		<filter-class>LoginCheckFilter</filter-class>

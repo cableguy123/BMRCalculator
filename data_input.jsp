@@ -15,12 +15,19 @@
         <img class="logo" src="image/logo/bmr-calculator-high-resolution-logo-color-on-transparent-background.png"
             alt="Website logo">
         <h1>Personal Data Input</h1>
+
         <form method="post" action="datacalculator">
-            Gender<input class="radio" type="radio" name="gender" value="M">Male
-            <input class="radio" type="radio" name="gender" value="F">Female<br>
-            Age<input class=" input" type="text" name="age" required><br>
-            Height<input class=" input" type="text" name="height" required><br>
-            Weight<input class=" input" type="text" name="weight" required><br>
+            Gender<input id="1" class="radio" type="radio" name="gender" value="M">
+            <label for="1">Male</label>
+            <input id="2" class="radio" type="radio" name="gender" value="F">
+            <label for="2">Female</label>
+            <br>
+            Age<input class=" input" type="text" name="age" required>
+            <br>
+            Height(cm)<input class=" input" type="text" name="height" required>
+            <br>
+            Weight(kg)<input class=" input" type="text" name="weight" required>
+            <br>
             <input class="button" type="submit" value="Submit">
             <input class="button" type="reset" value="Reset">
         </form>
