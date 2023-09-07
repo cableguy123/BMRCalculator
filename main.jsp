@@ -28,29 +28,6 @@
                 </nav>
             </header>
 
-
-            <div class="right-half">
-                </article>
-                <form method="post" action="">
-                    <h3>Activity Level</h3><input type="radio" id="html" name="activity_level" value="1">Sedentary:
-                    Little
-                    or no
-                    exercise
-                    <input type="radio" id="css" name="activity_level" value="2">Light: Exercise 1-2 times/week
-                    <input type="radio" id="html" name="activity_level" value="3">Moderate: Exercise 3-5 times/week
-                    <input type="radio" id="html" name="activity_level" value="4">Active: Daily exercise or intense
-                    exercise
-                    6-7
-                    times/week
-                    <input type="radio" id="html" name="activity_level" value="5">Extra Active: Very intense exercise
-                    daily,
-                    or
-                    physical job<br>
-                    <!-- <input class="button" type="submit" value="Calculate"> -->
-                </form>
-                </article>
-            </div>
-        </section>
             <section class="container">
                 <div class="left-half">
                     <article>
@@ -102,8 +79,8 @@
 
                             <div>
                                 <h3>Calories Data</h3>
-                                Date <input class=" input" type="text" name="date" required><br>
-                                Calories <input class=" input" type="text" name="calories" required><br>
+                                Date<input class=" input" type="text" name="date" required><br>
+                                Calories<input class=" input" type="text" name="calories" required><br>
                                 <input class="button" type="submit" value="Calculate"><br>
                             </div>
                         </form>
