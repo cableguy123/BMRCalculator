@@ -15,7 +15,8 @@
         <img class="logo" src="image/logo/bmr-calculator-high-resolution-logo-color-on-transparent-background.png"
             alt="Website logo">
         <h1>Personal Data Input</h1>
-        <form method="post" action="">
+
+        <form method="post" action="datacalculator">
             Gender<input id="1" class="radio" type="radio" name="gender" value="M">
             <label for="1">Male</label>
             <input id="2" class="radio" type="radio" name="gender" value="F">

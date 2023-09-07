@@ -61,4 +61,13 @@
 		<url-pattern>/authenticate</url-pattern>
 	</servlet-mapping>
 
+  <servlet>
+		<servlet-name>DataCalculator</servlet-name>
+		<servlet-class>DataCalculator</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DataCalculator</servlet-name>
+		<url-pattern>/datacalculator</url-pattern>
+	</servlet-mapping>
+
 </web-app>
