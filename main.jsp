@@ -28,7 +28,7 @@
                 </nav>
             </header>
 
-<<<<<<< HEAD
+
             <div class="right-half">
                 </article>
                 <form method="post" action="">
@@ -46,18 +46,11 @@
                     daily,
                     or
                     physical job<br>
-                    <input class="button" type="submit" value="Calculate">
+                    <!-- <input class="button" type="submit" value="Calculate"> -->
                 </form>
                 </article>
             </div>
         </section>
-
-          <!-- Data Display -->
-    <!-- <p>gender: <%= request.getAttribute("gender") %></p>
-    <p>age: <%= request.getAttribute("age") %></p>
-    <p>height: <%= request.getAttribute("height") %> cm</p>
-    <p>weight</p>: <%= request.getAttribute("weight") %> kg</p> -->
-=======
             <section class="container">
                 <div class="left-half">
                     <article>
@@ -110,8 +103,8 @@
 
                             <div>
                                 <h3>Calories Data</h3>
-                                Date<input class=" input" type="text" name="date" required><br>
-                                Calories<input class=" input" type="text" name="calories" required><br>
+                                Date <input class=" input" type="text" name="date" required><br>
+                                Calories <input class=" input" type="text" name="calories" required><br>
                                 <input class="button" type="submit" value="Calculate"><br>
                             </div>
                         </form>
@@ -119,7 +112,6 @@
                 </div>
             </section>
         </div>
->>>>>>> 47988126e6a14f5607ea32c79e98c93a1e637cc2
     </body>
 
     </html>
