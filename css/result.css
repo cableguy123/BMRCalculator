@@ -48,41 +48,9 @@ header ul li {
 }
 
 /*BODY*/
-div.content {
-    margin-top: 120px;
-}
-
-/*TABLE*/
-table,
-th,
-td {
-    border: 1px solid rgb(100, 100, 100);
-    border-collapse: collapse;
-}
-
-
-/*BUTTON*/
-body input.button {
-    margin: 5px;
-    background-color: #ff4136;
-    border: 0px;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    padding: 10px 16px;
-    position: relative;
+body div.content {
+    /*Horizontally Center*/
     text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-    white-space: nowrap;
-}
-
-body input.button:hover {
-    background-color: #e4372e;
+    /*Vertically Center*/
+    margin-top: 120px;
 }
