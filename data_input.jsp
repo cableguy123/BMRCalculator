@@ -22,11 +22,11 @@
             <input id="2" class="radio" type="radio" name="gender" value="F">
             <label for="2">Female</label>
             <br>
-            Age<input class=" input" type="text" name="age" required>
+            Age<input class="input" type="text" name="age" required>
             <br>
-            Height(cm)<input class=" input" type="text" name="height" required>
+            Height(cm)<input class="input" type="text" name="height" required>
             <br>
-            Weight(kg)<input class=" input" type="text" name="weight" required>
+            Weight(kg)<input class="input" type="text" name="weight" required>
             <br>
             <input class="button" type="submit" value="Submit">
             <input class="button" type="reset" value="Reset">

@@ -6,11 +6,11 @@ DROP TABLE bmr_users;
 CREATE TABLE bmr_users (
     user_id         number(3),
     login_name      varchar2(20)  NOT NULL,
-    login_password  varchar2(20) NOT NULL,
+    login_password  varchar2(20)  NOT NULL,
     user_gender     varchar2(10)  NOT NULL,
     user_age        number(3)     NOT NULL,
-    user_height     number(3)     NOT NULL,
-    user_weight     number(3)     NOT NULL,
+    user_height     number(4, 1)  NOT NULL,
+    user_weight     number(4, 1)  NOT NULL,
     CONSTRAINT pk_user_id PRIMARY KEY (user_id)
 );
 
@@ -18,9 +18,9 @@ CREATE TABLE results (
     result_id      number(5),
     user_id        number(3)     NOT NULL,
     meal_date      varchar2(10)  NOT NULL,
-    meal_calories  number(10)    NOT NULL,
-    bmr             number(5)     NOT NULL,
-    idee            number(5)     NOT NULL,
+    meal_calories  number(6, 2)  NOT NULL,
+    bmr            number(6, 2)  NOT NULL,
+    tdee           number(6, 2)  NOT NULL,
     result         varchar2(50)  NOT NULL,
     CONSTRAINT pk_result_id PRIMARY KEY (result_id),
     CONSTRAINT fk_user_id FOREIGN KEY(user_id) REFERENCES bmr_users(user_id)
@@ -41,10 +41,10 @@ CREATE SEQUENCE result_id_seq
 	NOCYCLE;
 
 INSERT INTO bmr_users
-VALUES(1, 'yung', '123', 'Male', 20, 180, 60);
+VALUES(1, 'yung', '123', 'Male', 20, 180.1, 60);
 
 INSERT INTO bmr_users
-VALUES(2, 'im', '123', 'Male', 20, 180, 70);
+VALUES(2, 'im', '123', 'Male', 20, 180.2, 70);
 
 INSERT INTO results
 VALUES(1, 1, '23-09-10', 1800, 1800, 1900, '100 Calories not enough.');
@@ -57,5 +57,9 @@ VALUES(3, 1, '23-09-13', 2500, 1800, 2000, '500 Calories over.');
 
 INSERT INTO results
 VALUES(4, 2, '23-09-15', 2000, 1800, 2100, '100 Calories over.');
+
+UPDATE bmr_users
+SET login_password = '456'
+WHERE user_id = 1;
 
 COMMIT;
