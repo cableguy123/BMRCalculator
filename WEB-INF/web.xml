@@ -40,6 +40,26 @@
 	</servlet-mapping>
 
 
+	<servlet>
+		<servlet-name>account</servlet-name>
+		<jsp-file>/account.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>account</servlet-name>
+		<url-pattern>/account</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>aboutus</servlet-name>
+		<jsp-file>/about_us.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>aboutus</servlet-name>
+		<url-pattern>/aboutus</url-pattern>
+	</servlet-mapping>
+
+
 	<filter>
 		<filter-name>LoginCheckFilter</filter-name>
 		<filter-class>LoginCheckFilter</filter-class>
@@ -61,7 +81,7 @@
 		<url-pattern>/authenticate</url-pattern>
 	</servlet-mapping>
 
-  <servlet>
+	<servlet>
 		<servlet-name>DataCalculator</servlet-name>
 		<servlet-class>DataCalculator</servlet-class>
 	</servlet>

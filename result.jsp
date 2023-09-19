@@ -7,7 +7,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="css/result.css">
 
-        <title>BMR Calculator</title>
+        <title>Result | BMR Calculator</title>
         <link rel="icon" type="image/png" href="image/logo/bmr-calculator-website-favicon-color.png">
     </head>
 
@@ -21,8 +21,8 @@
             <nav>
                 <ul>
                     <li><a class="link" href="main">TOP</a></li>
-                    <li><a class="link" href="">ACCOUNT</a></li>
-                    <li><a class="link" href="">ABOUT AS</a></li>
+                    <li><a class="link" href="account">ACCOUNT</a></li>
+                    <li><a class="link" href="aboutus">ABOUT AS</a></li>
                 </ul>
             </nav>
         </header>

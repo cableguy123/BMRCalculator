@@ -48,32 +48,14 @@ header ul li {
 }
 
 /*BODY*/
-/*Left-Right-half*/
-article {
-    position: sticky;
-    top: 50%;
-    transform: translate(0, -50%);
-    padding: 1rem;
-}
-
-.container {
-    display: flex;
-    height: 100vh;
-}
-
-div.left-half {
-    flex: 1;
-}
-
-div.right-half {
-    flex: 1;
+body div.content {
+    /*Horizontally Center*/
+    text-align: center;
+    /*Vertically Center*/
+    margin-top: 15%;
 }
 
 /*FORM*/
-body input.radio {
-    margin: 5px 5px 5px 5px;
-}
-
 body input.input {
     margin: 5px 5px 5px 5px;
     border-radius: 5px;

@@ -22,8 +22,8 @@
                 <nav>
                     <ul>
                         <li><a class="link" href="main">TOP</a></li>
-                        <li><a class="link" href="">ACCOUNT</a></li>
-                        <li><a class="link" href="">ABOUT AS</a></li>
+                        <li><a class="link" href="account">ACCOUNT</a></li>
+                        <li><a class="link" href="aboutus">ABOUT AS</a></li>
                     </ul>
                 </nav>
             </header>
@@ -80,7 +80,7 @@
                             <div>
                                 <h3>Calories Data</h3>
                                 Date<input class=" input" type="text" name="date" required><br>
-                                Calories<input class=" input" type="text" name="calories" required><br>
+                                Calories(kcal)<input class=" input" type="text" name="calories" required><br>
                                 <input class="button" type="submit" value="Calculate"><br>
                             </div>
                         </form>
