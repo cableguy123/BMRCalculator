@@ -19,26 +19,50 @@ public class DataCalculator extends HttpServlet{
     req.setAttribute("age",age);
     req.setAttribute("height", height);
     req.setAttribute("weight", weight);
-    
+
     PrintWriter out = res.getWriter();
     if(age >= 122 || age <= 3) {
+      if(height >= 280 || height <= 40 && weight >= 240) {
+      out.println("<script type='text/javascript'>");
+      out.println(
+        "alert('Please Re-Enter All!  Age Range 4 ~ 121,Height Range 41~279,Weight Range 0~239');"
+      );
+      out.println("history.back();");
+      out.println("</script>");  
+      }
       out.println("<script type='text/javascript'>");
       out.println(
         "alert('Please Re-Enter Age!  Range 4 ~ 121');"
       );
       out.println("history.back();");
       out.println("</script>");
-    }else if(height >= 280 || height <= 50) {
-      out.println("<script type='text/javascript'>");
+    }else if(height >= 280 || height <= 40) {
+      if(weight >= 240)  {
+        out.println("<script type='text/javascript'>");
        out.println(
-        "alert('Please Re-Enter Height!  Range 51~279');"
+        "alert('Please Re-Enter Weight!  Weight Range 0~239 This Height? ');"
       );
       out.println("history.back();");
       out.println("</script>");
-    }else if(weight >= 300 || weight <= 140) {
+      }
       out.println("<script type='text/javascript'>");
        out.println(
-        "alert('Please Re-Enter Weight!  Range 141 ~ 299');"
+        "alert('Please Re-Enter Height!  Range 41~279');"
+      );
+      out.println("history.back();");
+      out.println("</script>");
+    }else if(weight >= 240) {
+      if(height >= 280 || height <= 40) {
+         out.println("<script type='text/javascript'>");
+       out.println(
+        "alert('Please Re-Enter Height  Height Range 41~279');"
+      );
+      out.println("history.back();");
+      out.println("</script>");
+      }
+      out.println("<script type='text/javascript'>");
+       out.println(
+        "alert('Please Re-Enter Weight!  Weight Range 0~239');"
       );
       out.println("history.back();");
       out.println("</script>");
