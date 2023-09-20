@@ -22,6 +22,7 @@
                 <nav>
                     <ul>
                         <li><a class="link" href="main">TOP</a></li>
+                        <li><a class="link" href="result">RESULT</a></li>
                         <li><a class="link" href="account">ACCOUNT</a></li>
                         <li><a class="link" href="aboutus">ABOUT AS</a></li>
                     </ul>
