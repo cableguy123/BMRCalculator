@@ -90,4 +90,13 @@
 		<url-pattern>/datacalculator</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>PasswordChangeServlet</servlet-name>
+		<servlet-class>PasswordChangeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PasswordChangeServlet</servlet-name>
+		<url-pattern>/passwordchangeservlet</url-pattern>
+	</servlet-mapping>
+
 </web-app>

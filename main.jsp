@@ -79,7 +79,6 @@
 
                             <div>
                                 <h3>Calories Data</h3>
-                                Date<input class=" input" type="text" name="date" required><br>
                                 Calories(kcal)<input class=" input" type="text" name="calories" required><br>
                                 <input class="button" type="submit" value="Calculate"><br>
                             </div>
