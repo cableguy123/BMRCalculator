@@ -17,9 +17,9 @@
         <h1>Personal Data Input</h1>
 
         <form method="post" action="datacalculator">
-            Gender<input id="1" class="radio" type="radio" name="gender" value="M">
+            Gender<input id="1" class="radio" type="radio" name="gender" value="Male">
             <label for="1">Male</label>
-            <input id="2" class="radio" type="radio" name="gender" value="F">
+            <input id="2" class="radio" type="radio" name="gender" value="Female">
             <label for="2">Female</label>
             <br>
             Age<input class="input" type="text" name="age" required>

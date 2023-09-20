@@ -30,7 +30,7 @@
       <h2>Account setting</h2>
 
       <h3>Password change</h3>
-      <form method="post" action="">
+      <form method="post" action="passwordchangeservlet">
         Old password<input class="input" type="password" name="old_password" required>
         <br>
         New password<input class="input" type="password" name="new_password" required>
