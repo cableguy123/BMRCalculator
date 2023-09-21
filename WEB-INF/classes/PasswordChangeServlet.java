@@ -34,9 +34,7 @@ public class PasswordChangeServlet extends HttpServlet {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			cn = DriverManager.getConnection(
-					"jdbc:oracle:thin:@localhost:1521:orcl",
-					"info", "pro");
+			cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "info", "pro");
 
 			cn.setAutoCommit(false);
 
@@ -52,7 +50,41 @@ public class PasswordChangeServlet extends HttpServlet {
 				db_old_password = rs.getString(1);
 				System.out.println("DB_old_password: " + db_old_password);
 			}
+
+			rs = null;
+
+			if(old_password.equals(db_old_password) && new_password.equals(new_password_confirm)) {
+
+				sql = "UPDATE bmr_users SET login_password = ? WHERE user_id = 1";
 				
+				st = cn.prepareStatement(sql);
+					
+				st.setString(1, new_password);
+		
+				st.executeUpdate();
+
+				System.out.println("Password changed.");
+				message = "Password changed";
+			
+				req.setAttribute("message", message);
+			
+				RequestDispatcher dispatcher = req.getRequestDispatcher("main");
+			
+				dispatcher.forward(req,res);
+
+			} else if(old_password.equals(db_old_password) == false || new_password.equals(new_password_confirm) == false) {
+			
+				System.out.println("Password change fail. Password not match.");
+				message = "Password change fail. Password not match";
+				
+				req.setAttribute("message", message);
+				
+				RequestDispatcher dispatcher = req.getRequestDispatcher("account");
+
+				dispatcher.forward(req,res);
+
+			}
+
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -71,69 +103,6 @@ public class PasswordChangeServlet extends HttpServlet {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		}
-		
-		if(old_password.equals(db_old_password) && new_password.equals(new_password_confirm)) {
-			
-			try {
-				
-				Class.forName("oracle.jdbc.driver.OracleDriver");
-				
-				cn = DriverManager.getConnection(
-						"jdbc:oracle:thin:@localhost:1521:orcl",
-						"info","pro");
-				
-				cn.setAutoCommit(false);
-							
-				String sql = "UPDATE bmr_users SET login_password = ? WHERE user_id = 1";
-				
-				st = cn.prepareStatement(sql);
-				
-				st.setString(1, new_password);
-				
-				st.executeUpdate();
-				
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-
-				try {
-					if (rs != null) {
-						rs.close();
-					}
-					if (st != null) {
-						st.close();
-					}
-					if (cn != null) {
-						cn.close();
-					}
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			
-			System.out.println("Password changed.");
-			message = "Password changed";
-			
-			req.setAttribute("message", message);
-			
-			RequestDispatcher dispatcher = req.getRequestDispatcher("main");
-			
-			dispatcher.forward(req,res);
-			
-		} else if(old_password.equals(db_old_password) == false || new_password.equals(new_password_confirm) == false) {
-			
-			System.out.println("Password change fail. Password not match.");
-			message = "Password change fail. Password not match";
-			
-			req.setAttribute("message", message);
-			
-			RequestDispatcher dispatcher = req.getRequestDispatcher("account");
-
-			dispatcher.forward(req,res);
-			
 		}
 	}
 }
