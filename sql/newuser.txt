@@ -1,0 +1,16 @@
+CREATE USER bmr
+IDENTIFIED BY bmrpass
+DEFAULT TABLESPACE users
+TEMPORARY TABLESPACE temp
+QUOTA 100M ON users;
+
+GRANT create session, create table, create sequence
+TO bmr;
+
+GRANT insert, update, delete, select
+ON bmr.bmr_users
+TO bmr;
+
+GRANT insert, update, delete, select
+ON bmr.results
+TO bmr;
