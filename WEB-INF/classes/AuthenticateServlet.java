@@ -1,4 +1,4 @@
-import JDBC.DataInputServlet;
+import jdbc.DataInputServlet;
 
 import java.io.DataInput;
 import java.io.IOException;
@@ -34,7 +34,7 @@ public class AuthenticateServlet extends HttpServlet {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
 
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "info", "pro");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bmr", "bmrpass");
 
             cn.setAutoCommit(false);
 
