@@ -22,7 +22,7 @@
                 <nav>
                     <ul>
                         <li><a class="link" href="main">TOP</a></li>
-                        <li><a class="link" href="result">RESULT</a></li>
+                        <li><a class="link" href="showresultservlet">RESULT</a></li>
                         <li><a class="link" href="account">ACCOUNT</a></li>
                         <li><a class="link" href="aboutus">ABOUT AS</a></li>
                     </ul>
@@ -61,19 +61,19 @@
                         <form method="post" action="">
                             <div>
                                 <h3>Activity Level</h3>
-                                <input id="1" type="radio" name="activity_level" value="1">
+                                <input id="1" type="radio" name="activity_level" value="1" required>
                                 <label for="1">Sedentary: Little or no exercise</label>
                                 <br>
-                                <input id="2" type="radio" id="css" name="activity_level" value="2">
+                                <input id="2" type="radio" name="activity_level" value="2" required>
                                 <label for="2">Light: Exercise 1-2 times/week</label>
                                 <br>
-                                <input id="3" type="radio" id="html" name="activity_level" value="3">
+                                <input id="3" type="radio" name="activity_level" value="3" required>
                                 <label for="3">Moderate: Exercise 3-5 times/week</label>
                                 <br>
-                                <input id="4" type="radio" id="html" name="activity_level" value="4">
+                                <input id="4" type="radio" name="activity_level" value="4" required>
                                 <label for="4">Active: Daily exercise or intense exercise 6-7 times/week</label>
                                 <br>
-                                <input id="5" type="radio" id="html" name="activity_level" value="5">
+                                <input id="5" type="radio" name="activity_level" value="5" required>
                                 <label for="5">Extra Active: Very intense xercise daily, or physical job</label>
                                 <br>
                             </div>
