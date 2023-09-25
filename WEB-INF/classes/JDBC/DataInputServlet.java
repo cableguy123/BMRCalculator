@@ -1,4 +1,4 @@
-package JDBC;
+package jdbc;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -26,7 +26,7 @@ public class DataInputServlet extends HttpServlet {
       Class.forName("oracle.jdbc.driver.OracleDriver");
       cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
       cn.setAutoCommit(false);
-      String sql = "INSERT INTO bmr_users VALUES(?,?,?,?)";
+      String sql = "INSERT INTO bmr_users(user_gender, user_age, user_height, user_weight) VALUES(?,?,?,?)";
       st = cn.prepareStatement(sql);
 
       st.setString(1, gender);
