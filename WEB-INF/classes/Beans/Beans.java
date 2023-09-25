@@ -1,52 +1,52 @@
-package Beans;
+package beans;
 
 public class Beans {
-  private int resultID;
-  private int userID;
-  private String mealDate;
-  private String mealCalories;
-  private int bmr;
-  private int tdee;
+  private int result_id;
+  private int user_id;
+  private String meal_date;
+  private float meal_calories;
+  private float bmr;
+  private float tdee;
   private String result;
   // setter
-  public void setResultID(int resultID) {
-    this.resultID = resultID;
+  public void setResult_id(int result_id) {
+    this.result_id = result_id;
   }
-  public void setUserID(int userID) {
-    this.userID = userID;
+  public void setUser_id(int user_id) {
+    this.user_id = user_id;
   }
-  public void setMealDate(String mealDate) {
-    this.mealDate = mealDate;
+  public void setMeal_date(String meal_date) {
+    this.meal_date = meal_date;
   }
-  public void setMealCalories(String mealCalories) {
-    this.mealCalories = mealCalories;
+  public void setMeal_calories(float meal_calories) {
+    this.meal_calories = meal_calories;
   }
-  public void setBmr(int bmr) {
+  public void setBmr(float bmr) {
     this.bmr = bmr;
   }
-  public void setTdee(int tdee) {
+  public void setTdee(float tdee) {
     this.tdee = tdee;
   }
   public void setResult(String result) {
     this.result = result;
   }
   // getter 
-  public int getResultID() {
-    return resultID;
+  public int getResult_id() {
+    return result_id;
   }
-  public int getUserID() {
-    return userID;
+  public int getUser_id() {
+    return user_id;
   }
-  public String getMealDate() {
-    return mealDate;
+  public String getMeal_date() {
+    return meal_date;
   }
-  public String getMealCalories() {
-    return mealCalories;
+  public float getMeal_calories() {
+    return meal_calories;
   }
-  public int getBmr() {
+  public float getBmr() {
     return bmr;
   }
-  public int getTdee() {
+  public float getTdee() {
     return tdee;
   }
   public String getResult() {
