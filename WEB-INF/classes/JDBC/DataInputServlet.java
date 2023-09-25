@@ -1,4 +1,4 @@
-package JDBC;
+package jdbc;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -60,7 +60,7 @@ public class DataInputServlet extends HttpServlet {
             System.out.println(gender + "\t" + age + "\t" + height + "\n" + weight);
             try {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
-                cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "info", "pro");
+                cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bmr", "bmrpass");
                 cn.setAutoCommit(false);
 
                 String sql = "UPDATE bmr_users SET user_gender = ?, user_age = ?, user_height = ?, user_weight = ? WHERE user_id = 2";
