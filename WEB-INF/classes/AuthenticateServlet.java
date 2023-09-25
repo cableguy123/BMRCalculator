@@ -1,8 +1,10 @@
+import JDBC.DataInputServlet;
+
+import java.io.DataInput;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -28,7 +30,6 @@ public class AuthenticateServlet extends HttpServlet {
         Connection cn = null;
         Statement st = null;
         ResultSet rs = null;
-        PreparedStatement pstmt = null;
 
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -37,7 +38,7 @@ public class AuthenticateServlet extends HttpServlet {
 
             cn.setAutoCommit(false);
 
-            String sql = "SELECT * FROM bmr_users WHERE user_id = 1";
+            String sql = "SELECT * FROM bmr_users WHERE user_id = 2";
 
             st = cn.createStatement();
 
@@ -72,7 +73,7 @@ public class AuthenticateServlet extends HttpServlet {
         if(name.equals(name1) && pass.equals(pass1)) {
             HttpSession session = req.getSession();
             session.setAttribute("token", "OK");
-       }
+        }
         RequestDispatcher reqDispatcher = req.getRequestDispatcher("/data_input");
         reqDispatcher.forward(req, res);
  }

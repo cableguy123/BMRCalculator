@@ -16,7 +16,7 @@
             alt="Website logo">
         <h1>Personal Data Input</h1>
 
-        <form method="post" action="datacalculator">
+        <form method="post" action="datainputservlet">
             Gender<input id="1" class="radio" type="radio" name="gender" value="Male">
             <label for="1">Male</label>
             <input id="2" class="radio" type="radio" name="gender" value="Female">
