@@ -81,14 +81,6 @@
 		<url-pattern>/authenticate</url-pattern>
 	</servlet-mapping>
 
-	<servlet>
-		<servlet-name>DataCalculator</servlet-name>
-		<servlet-class>DataCalculator</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>DataCalculator</servlet-name>
-		<url-pattern>/datacalculator</url-pattern>
-	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>PasswordChangeServlet</servlet-name>
@@ -99,6 +91,17 @@
 		<url-pattern>/passwordchangeservlet</url-pattern>
 	</servlet-mapping>
 
+
+  <servlet>
+    <servlet-name>DataInputServlet</servlet-name>
+    <servlet-class>JDBC.DataInputServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DataInputServlet</servlet-name>
+    <url-pattern>/datainputservlet</url-pattern>
+  </servlet-mapping>
+
+  
 	<servlet>
 		<servlet-name>ShowResultServlet</servlet-name>
 		<servlet-class>ShowResultServlet</servlet-class>
