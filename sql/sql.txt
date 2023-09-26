@@ -17,7 +17,7 @@ CREATE TABLE bmr_users (
 CREATE TABLE results (
     result_id      number(5),
     user_id        number(3)     NOT NULL,
-    meal_date      varchar2(10)  NOT NULL,
+    meal_date      timestamp     DEFAULT SYSDATE,
     meal_calories  number(6, 2)  NOT NULL,
     bmr            number(6, 2)  NOT NULL,
     tdee           number(6, 2)  NOT NULL,
@@ -47,16 +47,16 @@ INSERT INTO bmr_users (user_id, login_name, login_password)
 VALUES(2, 'im', '123');
 
 INSERT INTO results
-VALUES(1, 1, '23-09-10', 1800, 1800, 1900, '100 Calories not enough.');
+VALUES(1, 1, sysdate, 1800, 1800, 1900, '100 Calories not enough.');
 
 INSERT INTO results
-VALUES(2, 1, '23-09-12', 2000, 1800, 2100, '100 Calories over.');
+VALUES(2, 1, sysdate, 2000, 1800, 2100, '100 Calories over.');
 
 INSERT INTO results
-VALUES(3, 1, '23-09-13', 2500, 1800, 2000, '500 Calories over.');
+VALUES(3, 1, sysdate, 2500, 1800, 2000, '500 Calories over.');
 
 INSERT INTO results
-VALUES(4, 2, '23-09-15', 2000, 1800, 2100, '100 Calories over.');
+VALUES(4, 2, sysdate, 2000, 1800, 2100, '100 Calories over.');
 
 UPDATE bmr_users
 SET login_password = '456'
