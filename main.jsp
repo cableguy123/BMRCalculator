@@ -58,7 +58,7 @@
 
                 <div class="right-half">
                     <article>
-                        <form method="post" action="">
+                        <form method="post" action="insertmealdataservlet">
                             <div>
                                 <h3>Activity Level</h3>
                                 <input id="1" type="radio" name="activity_level" value="1" required>

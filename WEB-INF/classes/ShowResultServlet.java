@@ -1,10 +1,11 @@
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.DriverManager;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,7 +19,7 @@ public class ShowResultServlet extends HttpServlet {
         response.setContentType("text/html");
         
         Connection cn = null;
-		Statement st = null;
+		PreparedStatement st = null;
 		ResultSet rs = null;
 		
 		ArrayList<beans.Beans> list = new ArrayList<>();
@@ -31,11 +32,13 @@ public class ShowResultServlet extends HttpServlet {
 			
 			cn.setAutoCommit(false);
 			
-			String sql = "SELECT * FROM results WHERE user_id = 1 ORDER BY meal_date";
+			String sql = "SELECT result_id, user_id, TO_CHAR(meal_date, 'YYYY-MM-DD'), meal_calories, bmr, tdee, result FROM results WHERE user_id = ? ORDER BY meal_date";
 			
-			st = cn.createStatement();	
+			st = cn.prepareStatement(sql);
 
-			rs = st.executeQuery(sql);
+			st.setString(1, "1");
+
+			rs = st.executeQuery();
 			
 			while (rs.next()) {
 				beans.Beans beans = new beans.Beans();
