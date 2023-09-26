@@ -23,42 +23,7 @@ public class DataInputServlet extends HttpServlet {
         String age = req.getParameter("age");
         String height = req.getParameter("height");
         String weight = req.getParameter("weight");
-        PrintWriter out = res.getWriter();
-        if (gender.isEmpty()) {
-          out.println("<script type='text/javascript'>");
-          out.println("alert('Please Selected Your Gender');");
-          out.println("history.back();");
-          out.println("</script>");
-      } else if (Integer.parseInt(age) >= 122 || Integer.parseInt(age) <= 3) {
-          out.println("<script type='text/javascript'>");
-          out.println("alert('Please Re-Enter Age!  Range 4 ~ 121');");
-          out.println("history.back();");
-          out.println("</script>");
-      } else if (Float.parseFloat(height) >= 280 || Float.parseFloat(height) <= 40) {
-          out.println("<script type='text/javascript'>");
-          out.println("alert('Please Re-Enter Height!  Range 41~279');");
-          out.println("history.back();");
-          out.println("</script>");
-          if (Float.parseFloat(weight) >= 240) {
-              out.println("<script type='text/javascript'>");
-              out.println("alert('Please Re-Enter Weight!  Weight Range 0~239 This Height?');");
-              out.println("history.back();");
-              out.println("</script>");
-          }
-      } else if (Float.parseFloat(weight) >= 240) {
-          out.println("<script type='text/javascript'>");
-          out.println("alert('Please Re-Enter Weight!  Weight Range 0~239');");
-          out.println("history.back();");
-          out.println("</script>");
-          if (Float.parseFloat(height) >= 280 || Float.parseFloat(height) <= 40) {
-              out.println("<script type='text/javascript'>");
-              out.println("alert('Please Re-Enter Height  Height Range 41~279');");
-              out.println("history.back();");
-              out.println("</script>");
-          }
-      }else {
-            System.out.println(gender + "\t" + age + "\t" + height + "\n" + weight);
-            try {
+        try {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
                 cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bmr", "bmrpass");
                 cn.setAutoCommit(false);
@@ -96,8 +61,8 @@ public class DataInputServlet extends HttpServlet {
                     e.printStackTrace();
                 }
             }
-        }
+        
         RequestDispatcher dispatcher = req.getRequestDispatcher("/main.jsp");
         dispatcher.forward(req, res);
-    }
+}
 }

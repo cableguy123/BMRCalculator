@@ -91,24 +91,12 @@
 		<url-pattern>/passwordchangeservlet</url-pattern>
 	</servlet-mapping>
 
-
-	<servlet>
-		<servlet-name>DataInputServlet</servlet-name>
-		<servlet-class>jdbc.DataInputServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>DataInputServlet</servlet-name>
-		<url-pattern>/datainputservlet</url-pattern>
-	</servlet-mapping>
-
-
-	<servlet>
-		<servlet-name>ShowResultServlet</servlet-name>
-		<servlet-class>ShowResultServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ShowResultServlet</servlet-name>
-		<url-pattern>/showresultservlet</url-pattern>
-	</servlet-mapping>
-
+  <servlet>
+    <servlet-name>DataInputServlet</servlet-name>
+    <servlet-class>jdbc.DataInputServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DataInputServlet</servlet-name>
+    <url-pattern>/datainputservlet</url-pattern>
+  </servlet-mapping>
 </web-app>
