@@ -1,9 +1,9 @@
 import java.io.IOException;
+import java.sql.SQLException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.DriverManager;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class PasswordChangeServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
-		
 		req.setCharacterEncoding("UTF-8");
 		
         Connection cn = null;
@@ -38,11 +37,11 @@ public class PasswordChangeServlet extends HttpServlet {
 
 			cn.setAutoCommit(false);
 
-			String sql = "SELECT login_password FROM bmr_users WHERE user_id = 1";
+			String sql = "SELECT login_password FROM bmr_users WHERE user_id = ?";
 
 			st = cn.prepareStatement(sql);
 
-			System.out.println("SQL: " + sql);
+			st.setString(1, "1");
 
 			rs = st.executeQuery();
 			
@@ -55,11 +54,12 @@ public class PasswordChangeServlet extends HttpServlet {
 
 			if(old_password.equals(db_old_password) && new_password.equals(new_password_confirm)) {
 
-				sql = "UPDATE bmr_users SET login_password = ? WHERE user_id = 1";
+				sql = "UPDATE bmr_users SET login_password = ? WHERE user_id = ?";
 				
 				st = cn.prepareStatement(sql);
 					
 				st.setString(1, new_password);
+				st.setString(2, "1");
 		
 				st.executeUpdate();
 

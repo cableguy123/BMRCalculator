@@ -111,4 +111,14 @@
 		<url-pattern>/showresultservlet</url-pattern>
 	</servlet-mapping>
 
+
+	<servlet>
+		<servlet-name>InsertMealDataServlet</servlet-name>
+		<servlet-class>InsertMealDataServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InsertMealDataServlet</servlet-name>
+		<url-pattern>/insertmealdataservlet</url-pattern>
+	</servlet-mapping>
+
 </web-app>
