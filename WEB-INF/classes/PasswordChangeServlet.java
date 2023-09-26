@@ -38,7 +38,7 @@ public class PasswordChangeServlet extends HttpServlet {
 
 			cn.setAutoCommit(false);
 
-			String sql = "SELECT login_password FROM bmr_users WHERE user_id = 1";
+			String sql = "SELECT login_password FROM bmr_users WHERE user_id = 2";
 
 			st = cn.prepareStatement(sql);
 
@@ -55,7 +55,7 @@ public class PasswordChangeServlet extends HttpServlet {
 
 			if(old_password.equals(db_old_password) && new_password.equals(new_password_confirm)) {
 
-				sql = "UPDATE bmr_users SET login_password = ? WHERE user_id = 1";
+				sql = "UPDATE bmr_users SET login_password = ? WHERE user_id = 2";
 				
 				st = cn.prepareStatement(sql);
 					
