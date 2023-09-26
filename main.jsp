@@ -24,7 +24,7 @@
                         <li><a class="link" href="main">TOP</a></li>
                         <li><a class="link" href="showresultservlet">RESULT</a></li>
                         <li><a class="link" href="account">ACCOUNT</a></li>
-                        <li><a class="link" href="aboutus">ABOUT AS</a></li>
+                        <li><a class="link" href="aboutus">ABOUT US</a></li>
                     </ul>
                 </nav>
             </header>
