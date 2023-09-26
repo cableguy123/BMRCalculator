@@ -17,7 +17,7 @@ CREATE TABLE bmr_users (
 CREATE TABLE results (
     result_id      number(5),
     user_id        number(3)     NOT NULL,
-    meal_date      varchar2(10)  NOT NULL,
+    meal_date      timestamp     DEFAULT(sysdate),
     meal_calories  number(6, 2)  NOT NULL,
     bmr            number(6, 2)  NOT NULL,
     tdee           number(6, 2)  NOT NULL,
