@@ -36,6 +36,7 @@ public class InsertMealDataServlet extends HttpServlet {
 		String result = null;
 
 		Calculator calc = new Calculator();
+		IsValidCalories isValid = new IsValidCalories();
 
 		String message = null;
 
@@ -46,9 +47,12 @@ public class InsertMealDataServlet extends HttpServlet {
 
 			cn.setAutoCommit(false);
 
-			String sql = "SELECT user_gender, user_age, user_height, user_weight FROM bmr_users where user_id = 1";
+			String sql = "SELECT user_gender, user_age, user_height, user_weight FROM bmr_users where user_id = ?";
 
 			st = cn.prepareStatement(sql);
+
+			st.setString(1, "1");
+			
 			rs = st.executeQuery();
 
 			while (rs.next()) {
@@ -67,7 +71,7 @@ public class InsertMealDataServlet extends HttpServlet {
 			result = calc.getResult();
 			System.out.println("BMR: " + bmr + "\t" + "TDEE: " + tdee + "\t" + "Result: " + result);
 
-			if(Float.parseFloat(calories) <= 5000) {
+			if(isValid.isValidCalories(calories)) {
 				sql = "INSERT INTO results VALUES(result_id_seq.nextval, ?, sysdate, ?, ?, ?, ?)";
 				
 				st = cn.prepareStatement(sql);
@@ -79,25 +83,18 @@ public class InsertMealDataServlet extends HttpServlet {
 				st.setString(5, result);
 		
 				st.executeUpdate();
-
-				/*System.out.println("");
-				message = "";*/
-			
-				req.setAttribute("message", message);
 			
 				res.sendRedirect("showresultservlet");
 
-			} else if(Float.parseFloat(calories) >= 5000) {
-			
-				/*System.out.println("");
-				message = "";*/
+			} else {
+				System.out.println("Please input calories between 0 and 5000.");
+				message = "Please input calories between 0 and 5000.";
 				
 				req.setAttribute("message", message);
 				
 				RequestDispatcher dispatcher = req.getRequestDispatcher("main");
-
+				
 				dispatcher.forward(req,res);
-
 			}
 
 		} catch (ClassNotFoundException e) {

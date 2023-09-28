@@ -47,13 +47,13 @@ INSERT INTO bmr_users (user_id, login_name, login_password)
 VALUES(2, 'im', '123');
 
 INSERT INTO results
-VALUES(1, 1, '23-09-10', 1800, 1800, 1900, '100 Calories not enough.');
+VALUES(1, 1, '23-09-10', 1800, 1642.94, 1900, '100 Calories not enough.');
 
 INSERT INTO results
-VALUES(2, 1, '23-09-12', 2000, 1800, 2100, '100 Calories over.');
+VALUES(2, 1, '23-09-12', 2000, 1642.94, 2100, '100 Calories over.');
 
 INSERT INTO results
-VALUES(3, 1, '23-09-13', 2500, 1800, 2000, '500 Calories over.');
+VALUES(3, 1, '23-09-13', 2500, 1642.94, 2000, '500 Calories over.');
 
 INSERT INTO results
 VALUES(4, 2, '23-09-15', 2000, 1800, 2100, '100 Calories over.');

@@ -64,7 +64,7 @@ public class PasswordChangeServlet extends HttpServlet {
 				st.executeUpdate();
 
 				System.out.println("Password changed.");
-				message = "Password changed";
+				message = "Password changed. ";
 			
 				req.setAttribute("message", message);
 			
@@ -72,10 +72,21 @@ public class PasswordChangeServlet extends HttpServlet {
 			
 				dispatcher.forward(req,res);
 
-			} else if(old_password.equals(db_old_password) == false || new_password.equals(new_password_confirm) == false) {
+			} else if(old_password.equals(db_old_password) == false) {
 			
-				System.out.println("Password change fail. Password not match.");
-				message = "Password change fail. Password not match";
+				System.out.println("Password change fail. Old password not match. ");
+				message = "Password change fail. Old password not match. ";
+				
+				req.setAttribute("message", message);
+				
+				RequestDispatcher dispatcher = req.getRequestDispatcher("account");
+
+				dispatcher.forward(req,res);
+
+			} else if(new_password.equals(new_password_confirm) == false) {
+			
+				System.out.println("Password change fail. New password and new password confirm not match. ");
+				message = "Password change fail. New password and new password confirm not match. ";
 				
 				req.setAttribute("message", message);
 				
