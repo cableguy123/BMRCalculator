@@ -1,3 +1,5 @@
+import jdbc.DBConnection;
+
 import java.util.ArrayList;
 
 import java.io.IOException;
@@ -23,12 +25,11 @@ public class ShowResultServlet extends HttpServlet {
 		ResultSet rs = null;
 		
 		ArrayList<beans.Beans> list = new ArrayList<>();
+
+		DBConnection dbc = new DBConnection();
 		
 		try {
-
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-
-			cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bmr", "bmrpass");
+			cn = dbc.getConnection();
 			
 			cn.setAutoCommit(false);
 			
@@ -53,8 +54,6 @@ public class ShowResultServlet extends HttpServlet {
 	
 				list.add(beans);
 			}
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

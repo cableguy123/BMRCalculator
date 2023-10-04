@@ -1,5 +1,4 @@
-package JDBC;
-
+package jdbc;
 
 import java.sql.Statement;
 import java.sql.Connection;
@@ -13,7 +12,7 @@ public class DBConnection {
   public DBConnection() {
     try {
       Class.forName("oracle.jdbc.driver.OracleDriver");
-      cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
+      cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","bmr","bmrpass");
     }catch(ClassNotFoundException e) {
       e.printStackTrace();
     }catch(SQLException e) {

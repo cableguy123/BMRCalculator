@@ -1,3 +1,5 @@
+import jdbc.DBConnection;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,10 +28,10 @@ public class AuthenticateServlet extends HttpServlet {
         PreparedStatement st = null;
         ResultSet rs = null;
 
-        try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
+        DBConnection dbc = new DBConnection();
 
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bmr", "bmrpass");
+        try {
+            cn = dbc.getConnection();
 
             String sql = "SELECT USER_ID, LOGIN_NAME, LOGIN_PASSWORD FROM bmr_users WHERE LOGIN_NAME = ?";
             st = cn.prepareStatement(sql);
@@ -81,7 +83,7 @@ public class AuthenticateServlet extends HttpServlet {
             reqDispatcher.forward(req, res);
             return;
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
