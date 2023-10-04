@@ -23,9 +23,9 @@ public class DataInputServlet extends HttpServlet {
         String age = req.getParameter("age");
         String height = req.getParameter("height");
         String weight = req.getParameter("weight");
+        DBConnection dbc = new DBConnection();
         try {
-                Class.forName("oracle.jdbc.driver.OracleDriver");
-                cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bmr", "bmrpass");
+                cn = dbc.getConnection();
                 cn.setAutoCommit(false);
 
                 String sql = "UPDATE bmr_users SET user_gender = ?, user_age = ?, user_height = ?, user_weight = ? WHERE user_id = 2";
@@ -42,8 +42,6 @@ public class DataInputServlet extends HttpServlet {
                 st.executeUpdate();
                 cn.commit();
 
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
             } catch (SQLException e) {
                 e.printStackTrace();
             } finally {

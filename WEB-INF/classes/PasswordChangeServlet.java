@@ -1,3 +1,5 @@
+import jdbc.DBConnection;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Connection;
@@ -29,11 +31,11 @@ public class PasswordChangeServlet extends HttpServlet {
         System.out.println("Parameter_new_password_confirm:" + new_password_confirm);
 		
 		String message;
+
+		DBConnection dbc = new DBConnection();
 		
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-
-			cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bmr", "bmrpass");
+			cn = dbc.getConnection();
 
 			cn.setAutoCommit(false);
 
@@ -96,8 +98,6 @@ public class PasswordChangeServlet extends HttpServlet {
 
 			}
 
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

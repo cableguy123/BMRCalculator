@@ -1,3 +1,5 @@
+import jdbc.DBConnection;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Connection;
@@ -37,13 +39,12 @@ public class InsertMealDataServlet extends HttpServlet {
 
 		Calculator calc = new Calculator();
 		IsValidCalories isValid = new IsValidCalories();
+		DBConnection dbc = new DBConnection();
 
 		String message = null;
 
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-
-			cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bmr", "bmrpass");
+			cn = dbc.getConnection();
 
 			cn.setAutoCommit(false);
 
@@ -97,8 +98,6 @@ public class InsertMealDataServlet extends HttpServlet {
 				dispatcher.forward(req,res);
 			}
 
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
