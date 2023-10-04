@@ -49,6 +49,44 @@ header ul li {
 
 /*BODY*/
 body div.content {
-    /*Vertically Center*/
     margin-top: 130px;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+body h2 {
+    text-align: left;
+}
+
+body p {
+    text-align: left;
+}
+
+/*BUTTON*/
+body a.button {
+    background-color: #ff4136;
+    border: 0px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+body a.button:hover {
+    background-color: #e4372e;
+}
+
+body div.button_center {
+    text-align: center;
 }

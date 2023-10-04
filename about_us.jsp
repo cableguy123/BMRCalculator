@@ -5,7 +5,7 @@
 
   <head>
     <!-- CSS -->
-    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/about_us.css">
 
     <title>Account setting | BMR Calculator</title>
     <link rel="icon" type="image/png" href="image/logo/bmr-calculator-website-favicon-color.png">
@@ -29,7 +29,14 @@
 
     <div class="content">
       <h2>About us</h2>
-
+      <p>Welcome to BMR CALCULATOR, your trusted source for accurate and personalized Basal Metabolic Rate calculations.
+        Our mission is to empower individuals on their journey towards a healthier lifestyle by providing precise
+        insights into their daily energy expenditure.</p>
+      <h2>Our Commitment</h2>
+      <p>At BMR CALCULATOR, we believe that understanding your Basal Metabolic Rate is a fundamental step in
+        achieving your health and fitness goals. We are dedicated to offering a user-friendly platform that delivers
+        reliable BMR calculations tailored to your unique profile.</p>
+      <div class="button_center"><a href="main" class="button">Back</a></div>
     </div>
   </body>
 

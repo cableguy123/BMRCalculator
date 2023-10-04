@@ -50,6 +50,7 @@
                         </tr>
                     </c:forEach>
                 </table>
+                <a href="main" class="button">Back</a>
             </div>
         </body>
 

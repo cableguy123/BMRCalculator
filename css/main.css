@@ -58,7 +58,9 @@ article {
 
 .container {
     display: flex;
-    height: 100vh;
+    margin-top: 280px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 div.left-half {
