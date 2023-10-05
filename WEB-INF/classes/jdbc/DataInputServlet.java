@@ -37,7 +37,7 @@ public class DataInputServlet extends HttpServlet {
                 st.setString(2, age);
                 st.setString(3, height);
                 st.setString(4, weight);
-                st.setString(5, weight);
+                st.setString(5, user_id);
                 System.out.println(gender);
                 System.out.println(age);
                 System.out.println(height);
