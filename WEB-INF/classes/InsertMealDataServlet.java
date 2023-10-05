@@ -1,3 +1,5 @@
+import jdbc.DBConnection;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Connection;
@@ -37,13 +39,14 @@ public class InsertMealDataServlet extends HttpServlet {
 
 		Calculator calc = new Calculator();
 		IsValidCalories isValid = new IsValidCalories();
+		DBConnection dbc = new DBConnection();
 
 		String message = null;
+		String user_id = req.getParameter("user_id");
+        System.out.println("user_id: " + user_id);
 
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-
-			cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bmr", "bmrpass");
+			cn = dbc.getConnection();
 
 			cn.setAutoCommit(false);
 
@@ -51,7 +54,7 @@ public class InsertMealDataServlet extends HttpServlet {
 
 			st = cn.prepareStatement(sql);
 
-			st.setString(1, "1");
+			st.setString(1, user_id);
 			
 			rs = st.executeQuery();
 
@@ -76,7 +79,7 @@ public class InsertMealDataServlet extends HttpServlet {
 				
 				st = cn.prepareStatement(sql);
 					
-				st.setString(1, "1");
+				st.setString(1, user_id);
 				st.setString(2, calories);
 				st.setString(3, Double.toString(bmr));
 				st.setString(4, Double.toString(tdee));
@@ -84,7 +87,7 @@ public class InsertMealDataServlet extends HttpServlet {
 		
 				st.executeUpdate();
 			
-				res.sendRedirect("showresultservlet");
+				res.sendRedirect("showresultservlet?user_id=" + user_id);
 
 			} else {
 				System.out.println("Please input calories between 0 and 5000.");
@@ -97,8 +100,6 @@ public class InsertMealDataServlet extends HttpServlet {
 				dispatcher.forward(req,res);
 			}
 
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

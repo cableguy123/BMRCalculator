@@ -1,3 +1,5 @@
+import jdbc.DBConnection;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,11 +28,17 @@ public class AuthenticateServlet extends HttpServlet {
         Connection cn = null;
         PreparedStatement st = null;
         ResultSet rs = null;
+<<<<<<< HEAD
         RequestDispatcher dispatcher = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
+=======
 
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bmr", "bmrpass");
+        DBConnection dbc = new DBConnection();
+>>>>>>> 94fe0c62b676f6510e87a0ca9f4b6545a206d10e
+
+        try {
+            cn = dbc.getConnection();
 
             String sql = "SELECT USER_ID,LOGIN_NAME, LOGIN_PASSWORD FROM bmr_users WHERE LOGIN_NAME = ?";
             st = cn.prepareStatement(sql);
@@ -62,11 +70,19 @@ public class AuthenticateServlet extends HttpServlet {
                                 System.out.println(userHeight);
                                 System.out.println(userWeight);
                                 if(userGender == null || userAge == 0 && userHeight == 0.0 || userWeight == 0.0) {
+<<<<<<< HEAD
                                   res.sendRedirect("data_input?user_id=" + user_id);
                                   return;
                                 }else {
                                   res.sendRedirect("data_input?user_id=" + user_id);
                                   return; 
+=======
+                                    res.sendRedirect("data_input?user_id=" + user_id);
+                                    return;
+                                }else {
+                                    res.sendRedirect("main?user_id=" + user_id);
+                                    return;
+>>>>>>> 94fe0c62b676f6510e87a0ca9f4b6545a206d10e
                                 }
                             } while (dataResult.next());
                         } 
@@ -74,11 +90,20 @@ public class AuthenticateServlet extends HttpServlet {
                 }
             }
 
+<<<<<<< HEAD
             if(dispatcher == null) {
               dispatcher = req.getRequestDispatcher("/login");
             }
             dispatcher.forward(req, res);  
         } catch (ClassNotFoundException | SQLException e) {
+=======
+            
+            RequestDispatcher reqDispatcher = req.getRequestDispatcher("login");
+            reqDispatcher.forward(req, res);
+            return;
+
+        } catch (SQLException e) {
+>>>>>>> 94fe0c62b676f6510e87a0ca9f4b6545a206d10e
             e.printStackTrace();
         } finally {
             try {

@@ -82,3 +82,29 @@ body table tr {
 body table tr:nth-of-type(even) {
     background-color: white;
 }
+
+/*BUTTON*/
+body a.button {
+    margin: 20px;
+    background-color: #ff4136;
+    border: 0px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+body a.button:hover {
+    background-color: #e4372e;
+}

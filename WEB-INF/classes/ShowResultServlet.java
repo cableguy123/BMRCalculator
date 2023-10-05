@@ -1,3 +1,5 @@
+import jdbc.DBConnection;
+
 import java.util.ArrayList;
 
 import java.io.IOException;
@@ -21,14 +23,16 @@ public class ShowResultServlet extends HttpServlet {
         Connection cn = null;
 		PreparedStatement st = null;
 		ResultSet rs = null;
+
+		String user_id = request.getParameter("user_id");
+        System.out.println("user_id: " + user_id);
 		
 		ArrayList<beans.Beans> list = new ArrayList<>();
+
+		DBConnection dbc = new DBConnection();
 		
 		try {
-
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-
-			cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bmr", "bmrpass");
+			cn = dbc.getConnection();
 			
 			cn.setAutoCommit(false);
 			
@@ -36,7 +40,7 @@ public class ShowResultServlet extends HttpServlet {
 			
 			st = cn.prepareStatement(sql);
 
-			st.setString(1, "1");
+			st.setString(1, user_id);
 
 			rs = st.executeQuery();
 			
@@ -53,8 +57,6 @@ public class ShowResultServlet extends HttpServlet {
 	
 				list.add(beans);
 			}
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
