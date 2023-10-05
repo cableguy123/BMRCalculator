@@ -23,18 +23,21 @@ public class DataInputServlet extends HttpServlet {
         String age = req.getParameter("age");
         String height = req.getParameter("height");
         String weight = req.getParameter("weight");
+        String user_id = req.getParameter("user_id");
+        System.out.println("user_id: " + user_id);
         DBConnection dbc = new DBConnection();
         try {
                 cn = dbc.getConnection();
                 cn.setAutoCommit(false);
 
-                String sql = "UPDATE bmr_users SET user_gender = ?, user_age = ?, user_height = ?, user_weight = ? WHERE user_id = 2";
+                String sql = "UPDATE bmr_users SET user_gender = ?, user_age = ?, user_height = ?, user_weight = ? WHERE user_id = ?";
                 st = cn.prepareStatement(sql);
 
                 st.setString(1, gender);
                 st.setString(2, age);
                 st.setString(3, height);
                 st.setString(4, weight);
+                st.setString(5, weight);
                 System.out.println(gender);
                 System.out.println(age);
                 System.out.println(height);
@@ -60,7 +63,6 @@ public class DataInputServlet extends HttpServlet {
                 }
             }
         
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/main.jsp");
-        dispatcher.forward(req, res);
-}
+        res.sendRedirect("main?user_id=" + user_id);
+    }
 }

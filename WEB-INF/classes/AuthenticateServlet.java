@@ -67,10 +67,11 @@ public class AuthenticateServlet extends HttpServlet {
                                 System.out.println(userWeight);
                                 System.out.println(user_id);
                                 if(userGender == null || userAge == 0 && userHeight == 0.0 || userWeight == 0.0) {
-                                  res.sendRedirect("data_input?user_id=" + user_id);
+                                    res.sendRedirect("data_input?user_id=" + user_id);
+                                    return;
                                 }else {
-                                  RequestDispatcher dispatcher = req.getRequestDispatcher("main");
-                                  dispatcher.forward(req, res);
+                                    res.sendRedirect("main?user_id=" + user_id);
+                                    return;
                                 }
                             } while (dataResult.next());
                         } 

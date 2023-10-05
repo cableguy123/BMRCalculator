@@ -31,6 +31,8 @@ public class PasswordChangeServlet extends HttpServlet {
         System.out.println("Parameter_new_password_confirm:" + new_password_confirm);
 		
 		String message;
+		String user_id = req.getParameter("user_id");
+        System.out.println("user_id: " + user_id);
 
 		DBConnection dbc = new DBConnection();
 		
@@ -43,7 +45,7 @@ public class PasswordChangeServlet extends HttpServlet {
 
 			st = cn.prepareStatement(sql);
 
-			st.setString(1, "1");
+			st.setString(1, user_id);
 
 			rs = st.executeQuery();
 			
@@ -61,7 +63,7 @@ public class PasswordChangeServlet extends HttpServlet {
 				st = cn.prepareStatement(sql);
 					
 				st.setString(1, new_password);
-				st.setString(2, "1");
+				st.setString(2, user_id);
 		
 				st.executeUpdate();
 
