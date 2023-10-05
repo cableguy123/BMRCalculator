@@ -17,7 +17,6 @@ public class AuthenticateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
         req.setCharacterEncoding("UTF-8");
-
         String name = req.getParameter("user");
         String pass = req.getParameter("pass");
         String user_id = null;
