@@ -14,15 +14,15 @@
   <body>
     <header>
       <div>
-        <a href="main"><img src="image/logo/bmr-calculator-high-resolution-logo-color-on-transparent-background.png"
+        <a href="main?user_id=<% String s = request.getParameter("user_id"); %><%=s %>"><img src="image/logo/bmr-calculator-high-resolution-logo-color-on-transparent-background.png"
             alt="Website logo" width="50%"></a>
       </div>
       <nav>
         <ul>
-          <li><a class="link" href="main">TOP</a></li>
-          <li><a class="link" href="showresultservlet">RESULT</a></li>
-          <li><a class="link" href="account">ACCOUNT</a></li>
-          <li><a class="link" href="aboutus">ABOUT US</a></li>
+          <li><a class="link" href="main?user_id=<%=s %>">TOP</a></li>
+          <li><a class="link" href="showresultservlet?user_id=<%=s %>">RESULT</a></li>
+          <li><a class="link" href="account?user_id=<%=s %>">ACCOUNT</a></li>
+          <li><a class="link" href="aboutus?user_id=<%=s %>">ABOUT US</a></li>
         </ul>
       </nav>
     </header>
@@ -31,7 +31,7 @@
       <h2>Account setting</h2>
 
       <h3>Password change</h3>
-      <form method="post" action="passwordchangeservlet">
+      <form method="post" action="passwordchangeservlet?user_id=<%=s %>">
         Old password<input class="input" type="password" name="old_password" required>
         <br>
         New password<input class="input" type="password" name="new_password" required>

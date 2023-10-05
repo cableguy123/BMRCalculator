@@ -42,6 +42,8 @@ public class InsertMealDataServlet extends HttpServlet {
 		DBConnection dbc = new DBConnection();
 
 		String message = null;
+		String user_id = req.getParameter("user_id");
+        System.out.println("user_id: " + user_id);
 
 		try {
 			cn = dbc.getConnection();
@@ -52,7 +54,7 @@ public class InsertMealDataServlet extends HttpServlet {
 
 			st = cn.prepareStatement(sql);
 
-			st.setString(1, "1");
+			st.setString(1, user_id);
 			
 			rs = st.executeQuery();
 
@@ -77,7 +79,7 @@ public class InsertMealDataServlet extends HttpServlet {
 				
 				st = cn.prepareStatement(sql);
 					
-				st.setString(1, "1");
+				st.setString(1, user_id);
 				st.setString(2, calories);
 				st.setString(3, Double.toString(bmr));
 				st.setString(4, Double.toString(tdee));
@@ -85,7 +87,7 @@ public class InsertMealDataServlet extends HttpServlet {
 		
 				st.executeUpdate();
 			
-				res.sendRedirect("showresultservlet");
+				res.sendRedirect("showresultservlet?user_id=" + user_id);
 
 			} else {
 				System.out.println("Please input calories between 0 and 5000.");
