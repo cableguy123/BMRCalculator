@@ -42,7 +42,7 @@
             alt="Website logo">
         <h1>Personal Data Input</h1>
 
-        <form method="post" action="datainputservlet" name="form1" onsubmit="return validate()">
+        <form method="post" name="form1" onsubmit="return validate()" action="datainputservlet?user_id=<% String s = request.getParameter("user_id"); %><%=s %>">
             Gender<input id="1" class="radio" type="radio" name="gender" value="Male" required>
             <label for="1">Male</label>
             <input id="2" class="radio" type="radio" name="gender" value="Female" required>

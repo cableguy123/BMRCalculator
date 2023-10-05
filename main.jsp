@@ -15,7 +15,7 @@
         <div>
             <header>
                 <div>
-                    <a href="?user_id=<% String s = request.getParameter("user_id"); %><%=s %>"><img
+                    <a href="main?user_id=<% String s = request.getParameter("user_id"); %><%=s %>"><img
                             src="image/logo/bmr-calculator-high-resolution-logo-color-on-transparent-background.png"
                             alt="Website logo" width="50%"></a>
                 </div>
