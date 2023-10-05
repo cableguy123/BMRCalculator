@@ -1,8 +1,4 @@
 package jdbc;
-<<<<<<< HEAD
-
-=======
->>>>>>> 94fe0c62b676f6510e87a0ca9f4b6545a206d10e
 
 import java.sql.Statement;
 import java.sql.Connection;
