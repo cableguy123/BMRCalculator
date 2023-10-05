@@ -8,6 +8,9 @@ public class Beans {
   private float bmr;
   private float tdee;
   private String result;
+  public Beans() {
+
+  }
   // setter
   public void setResult_id(int result_id) {
     this.result_id = result_id;

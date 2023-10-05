@@ -121,4 +121,15 @@
 		<url-pattern>/insertmealdataservlet</url-pattern>
 	</servlet-mapping>
 
+  <servlet>
+		<servlet-name>InsertUserServlet</servlet-name>
+		<servlet-class>InsertUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InsertUserServlet</servlet-name>
+		<url-pattern>/insertuserservlet</url-pattern>
+	</servlet-mapping>
+
+      
+
 </web-app>

@@ -5,7 +5,7 @@ DROP TABLE bmr_users;
 
 CREATE TABLE bmr_users (
     user_id         number(3),
-    login_name      varchar2(20)  NOT NULL,
+    login_name      varchar2(20)  UNIQUE, NOT NULL,
     login_password  varchar2(20)  NOT NULL,
     user_gender     varchar2(10),
     user_age        number(3),

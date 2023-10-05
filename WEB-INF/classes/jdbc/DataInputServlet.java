@@ -27,10 +27,8 @@ public class DataInputServlet extends HttpServlet {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
                 cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bmr", "bmrpass");
                 cn.setAutoCommit(false);
-
                 String sql = "UPDATE bmr_users SET user_gender = ?, user_age = ?, user_height = ?, user_weight = ? WHERE user_id = 2";
                 st = cn.prepareStatement(sql);
-
                 st.setString(1, gender);
                 st.setString(2, age);
                 st.setString(3, height);
