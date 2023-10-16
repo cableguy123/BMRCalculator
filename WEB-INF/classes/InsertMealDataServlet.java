@@ -68,7 +68,19 @@ public class InsertMealDataServlet extends HttpServlet {
 
 			calc.setBmr(user_gender, user_age, user_height, user_weight);
 			calc.setTdee(Integer.parseInt(actLv));
-			calc.setResult(Float.parseFloat(calories));
+			try {
+				calc.setResult(Float.parseFloat(calories));
+			} catch(NumberFormatException e) {
+				System.out.println("Please input calories between 0 and 5000.");
+				message = "Please input calories between 0 and 5000.";
+				
+				req.setAttribute("message", message);
+				
+				RequestDispatcher dispatcher = req.getRequestDispatcher("main");
+				
+				dispatcher.forward(req,res);
+			}
+			
 			bmr = calc.getBmr();
 			tdee = calc.getTdee();
 			result = calc.getResult();
