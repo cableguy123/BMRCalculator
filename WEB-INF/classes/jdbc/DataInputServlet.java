@@ -29,12 +29,8 @@ public class DataInputServlet extends HttpServlet {
         try {
                 cn = dbc.getConnection();
                 cn.setAutoCommit(false);
-<<<<<<< HEAD
-                String sql = "UPDATE bmr_users SET user_gender = ?, user_age = ?, user_height = ?, user_weight = ? WHERE user_id = 2";
-=======
-
+                
                 String sql = "UPDATE bmr_users SET user_gender = ?, user_age = ?, user_height = ?, user_weight = ? WHERE user_id = ?";
->>>>>>> 94fe0c62b676f6510e87a0ca9f4b6545a206d10e
                 st = cn.prepareStatement(sql);
                 st.setString(1, gender);
                 st.setString(2, age);
