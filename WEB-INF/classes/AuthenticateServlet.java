@@ -1,3 +1,5 @@
+import jdbc.DBConnection;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,6 +19,7 @@ public class AuthenticateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
         req.setCharacterEncoding("UTF-8");
+
         String name = req.getParameter("user");
         String pass = req.getParameter("pass");
         String user_id = null;
@@ -26,10 +29,11 @@ public class AuthenticateServlet extends HttpServlet {
         PreparedStatement st = null;
         ResultSet rs = null;
         RequestDispatcher dispatcher = null;
-        try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
 
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bmr", "bmrpass");
+        DBConnection dbc = new DBConnection();
+
+        try {
+            cn = dbc.getConnection();
 
             String sql = "SELECT USER_ID,LOGIN_NAME, LOGIN_PASSWORD FROM bmr_users WHERE LOGIN_NAME = ?";
             st = cn.prepareStatement(sql);
@@ -61,23 +65,23 @@ public class AuthenticateServlet extends HttpServlet {
                                 System.out.println(userHeight);
                                 System.out.println(userWeight);
                                 if(userGender == null || userAge == 0 && userHeight == 0.0 || userWeight == 0.0) {
-                                  res.sendRedirect("data_input?user_id=" + user_id);
-                                  return;
+                                    res.sendRedirect("data_input?user_id=" + user_id);
+                                    return;
                                 }else {
-                                  res.sendRedirect("data_input?user_id=" + user_id);
-                                  return; 
+                                    res.sendRedirect("main?user_id=" + user_id);
+                                    return;
                                 }
                             } while (dataResult.next());
                         } 
                     }
                 }
             }
+            
+            RequestDispatcher reqDispatcher = req.getRequestDispatcher("login");
+            reqDispatcher.forward(req, res);
+            return;
 
-            if(dispatcher == null) {
-              dispatcher = req.getRequestDispatcher("/login");
-            }
-            dispatcher.forward(req, res);  
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
