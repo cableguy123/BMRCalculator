@@ -29,8 +29,13 @@ public class DataInputServlet extends HttpServlet {
         try {
                 cn = dbc.getConnection();
                 cn.setAutoCommit(false);
+<<<<<<< HEAD
                 String sql = "UPDATE bmr_users SET user_gender = ?, user_age = ?, user_height = ?, user_weight = ? WHERE user_id = ?";
 
+=======
+                
+                String sql = "UPDATE bmr_users SET user_gender = ?, user_age = ?, user_height = ?, user_weight = ? WHERE user_id = ?";
+>>>>>>> ab5e9817316a80d481586d36350386502b8bd3ad
                 st = cn.prepareStatement(sql);
                 st.setString(1, gender);
                 st.setString(2, age);
@@ -64,4 +69,8 @@ public class DataInputServlet extends HttpServlet {
         
         res.sendRedirect("main?user_id=" + user_id);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ab5e9817316a80d481586d36350386502b8bd3ad
